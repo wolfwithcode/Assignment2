@@ -1,6 +1,8 @@
 const $ = document.querySelector.bind(document);
-const messageVi = "Số điện thoại không hợp lệ!";
-const messageEn = "Invalid international phone number!";
+const messageVi = "Đã submit thành công!";
+const messageEn = "Submit successfully!";
+const errorVi = "Số điện thoại không hợp lệ!";
+const errorEn = "Invalid international phone number!";
 
 const app = (() => {
   const submitBtm = $("#submit");
@@ -21,7 +23,10 @@ const app = (() => {
 
         if (!isPhone(inputPhone.value)) {
           let message = language === "vi" ? messageVi : messageEn;
-          alert(`${message} : ${inputPhone.value}`);
+          let error = language === "vi" ? errorVi : errorEn;
+          alert(`${error} : ${inputPhone.value}`);
+        } else {
+          alert(`${message}`);
         }
       };
     },

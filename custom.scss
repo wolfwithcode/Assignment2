@@ -1,4 +1,6 @@
 // Custom.scss
 $primary: #522192;
-
+$theme-colors: (
+  "primary": $primary,
+);
 @import "./bootstrap/scss/bootstrap.scss";
