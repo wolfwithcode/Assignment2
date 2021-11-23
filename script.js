@@ -20,10 +20,9 @@ const app = (() => {
       submitBtm.onclick = () => {
         var language =
           window.navigator.userLanguage || window.navigator.language;
-
+        let message = language === "vi" ? messageVi : messageEn;
+        let error = language === "vi" ? errorVi : errorEn;
         if (!isPhone(inputPhone.value)) {
-          let message = language === "vi" ? messageVi : messageEn;
-          let error = language === "vi" ? errorVi : errorEn;
           alert(`${error} : ${inputPhone.value}`);
         } else {
           alert(`${message}`);
